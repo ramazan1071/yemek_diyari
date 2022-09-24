@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "999340463740",
+    "firebase_url": "https://yemekdiyari-bd023-default-rtdb.firebaseio.com",
+    "project_id": "yemekdiyari-bd023",
+    "storage_bucket": "yemekdiyari-bd023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999340463740:android:a21f71b5a0cc34f69e5bf9",
+        "android_client_info": {
+          "package_name": "com.example.yemek_diyari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999340463740-iat1oih3np9e6nov1m0k56e3mnub3je0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYYoOHqbIxfjVn8kBMwuM1hr-byllVeWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999340463740-iat1oih3np9e6nov1m0k56e3mnub3je0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
