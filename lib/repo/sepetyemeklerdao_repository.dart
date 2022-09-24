@@ -12,7 +12,7 @@ class SepetYemeklerDaoRepository{
     var url = "http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php";
     var veri={"kullanici_adi":kullanici_adi};
     var cevap = await Dio().post(url,data: FormData.fromMap(veri));
-    print("Yemek ekle : ${cevap.data.toString()}");
+    print("Yemek göster : ${cevap.data.toString()}");
     return parseSepetYemeklerCevap(cevap.data.toString());
 
   }

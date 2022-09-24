@@ -24,9 +24,8 @@ class _SignInScreenState extends State<SignInScreen> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-          hexStringToColor("025930"),
-          hexStringToColor("034f2b"),
-          hexStringToColor("f29f05")
+          hexStringToColor("f29f05"),
+          hexStringToColor("025930")
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SingleChildScrollView(
           child: Padding(
@@ -38,7 +37,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                reusableTextField("Kullanıcı Adı Giriniz", Icons.person_outline, false,
+                reusableTextField("Email Giriniz", Icons.person_outline, false,
                     _emailTextController),
                 const SizedBox(
                   height: 20,

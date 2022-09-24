@@ -44,12 +44,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                reusableTextField("Kullanıcı adı giriniz", Icons.person_outline, false,
+                reusableTextField("Kullanıcı Adı Giriniz", Icons.person_outline, false,
                     _userNameTextController),
                 const SizedBox(
                   height: 20,
                 ),
-                reusableTextField("Email giriniz", Icons.person_outline, false,
+                reusableTextField("Email Giriniz", Icons.person_outline, false,
                     _emailTextController),
                 const SizedBox(
                   height: 20,

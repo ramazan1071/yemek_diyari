@@ -17,11 +17,11 @@ class _YemekDetaySayfaState extends State<YemekDetaySayfa> {
   int toplam = 0;
   int yemek_fiyat = 0;
   int adet= 0;
+
   @override
   void initState() {
     var a = widget.yemek;
     yemek_fiyat = int.parse(a.yemek_fiyat);
-    toplam = int.parse(a.yemek_fiyat);
     super.initState();
   }
   @override
@@ -50,8 +50,10 @@ class _YemekDetaySayfaState extends State<YemekDetaySayfa> {
                               onPressed: (){
                             setState(() {
                               adet = adet + 1;
-                              toplam = toplam + yemek_fiyat;
-                              print("$toplam");
+                              if(adet>0){
+                                toplam = toplam + yemek_fiyat;
+                                print("$toplam");
+                              }
                             });
                           },
                               style: ElevatedButton.styleFrom(
@@ -85,7 +87,17 @@ class _YemekDetaySayfaState extends State<YemekDetaySayfa> {
                         SizedBox(height: 50,
                           child: ElevatedButton(onPressed: (){
                             if(adet>0){
-                              context.read<YemekDetaySayfaCubit>().SepetYemekKayit(widget.yemek.yemek_adi, widget.yemek.yemek_resim_adi,widget.yemek.yemek_fiyat,adet.toString(), "ramazan");
+                              context.read<YemekDetaySayfaCubit>().SepetYemekKayit(widget.yemek.yemek_adi, widget.yemek.yemek_resim_adi,toplam.toString(),adet.toString(), "ramazan");
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Sepete ($adet) adet ${widget.yemek.yemek_adi} eklendi.",
+                                style: TextStyle(color: Colors.green,fontSize: 15),),
+                              backgroundColor: Colors.white,duration: Duration(seconds: 2),));
+                            }
+                            else{
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("Ürün 0 adet olamaz.",
+                                  style: TextStyle(color: Colors.red,fontSize: 15)),
+                              ),backgroundColor: Colors.white,duration: Duration(seconds: 2),));
                             }
                           },  style: ElevatedButton.styleFrom(
                               primary: Color(0xff025930),

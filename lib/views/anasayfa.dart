@@ -39,6 +39,7 @@ class _AnaSayfaState extends State<AnaSayfa> {
       body: Center(
         child:
         SingleChildScrollView(
+<<<<<<< HEAD
           child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
@@ -104,6 +105,75 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 ),
               ),
             ],
+=======
+          child: SafeArea(
+            child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.black12,
+                      borderRadius: BorderRadius.circular(32),
+                    ),
+                    child:TextField(autofocus:false,textAlign: TextAlign.center,
+                      decoration: const InputDecoration(
+                      hintText: " Yemek Ara",
+                      hintStyle: TextStyle(fontWeight: FontWeight.w300, color: Colors.black54, ),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(10),
+                    ),
+                      onChanged: (aramaSonucu){
+                        context.read<AnasayfaCubit>().ara(aramaSonucu);
+                      },),
+                  ),
+                ),
+                SizedBox(height: 500,
+                  child: BlocBuilder<AnasayfaCubit,List<Yemekler>>(
+                      builder: (context,yemeklerListesi){
+                        if(yemeklerListesi.isNotEmpty){
+                          return GridView.builder(
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              childAspectRatio: 2 / 2
+                            ),
+                            itemCount: yemeklerListesi.length,
+                            itemBuilder: (context,indeks){
+                              var yemek = yemeklerListesi[indeks];
+                              return GestureDetector(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => YemekDetaySayfa(yemek: yemek)));
+                                },
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    side: BorderSide(
+                                      width: 0.5
+                                    ),
+                                    borderRadius: BorderRadius.circular(15.0)
+                                  ),
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      SizedBox(width: 80,height: 80,
+                                          child: Image.network("http://kasimadalan.pe.hu/yemekler/resimler/${yemek.yemek_resim_adi}")
+                                      ),
+                                          Text("${yemek.yemek_adi}",style: TextStyle(fontSize: 20),),
+                                      Text("${yemek.yemek_fiyat} ₺",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Color(0xfff29f05)),)
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        }
+                        else{
+                          return const Center();
+                        }
+                      }
+                  ),
+                ),
+              ],
+            ),
+>>>>>>> b208f28 (son hali)
           ),
         ),
       ),
