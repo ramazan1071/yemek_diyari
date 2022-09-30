@@ -39,7 +39,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
       body: Center(
         child:
         SingleChildScrollView(
-<<<<<<< HEAD
           child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
@@ -105,7 +104,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 ),
               ),
             ],
-=======
           child: SafeArea(
             child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -173,7 +171,6 @@ class _AnaSayfaState extends State<AnaSayfa> {
                 ),
               ],
             ),
->>>>>>> b208f28 (son hali)
           ),
         ),
       ),
